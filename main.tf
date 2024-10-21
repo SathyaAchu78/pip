@@ -50,3 +50,14 @@ module "autoscaling" {
   security_group_id  = module.vpc1.security_group_id
   availability_zones = var.availability_zones
 }
+
+terraform {
+  backend "s3" {
+    bucket         = var.s3_bucket
+    key            = var.state_key
+    region         = var.aws_region
+    dynamodb_table = var.dynamodb_table
+    encrypt        = true
+  }
+}
+

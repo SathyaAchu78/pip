@@ -41,10 +41,26 @@ variable "ami_id" {
 variable "availability_zones" {
   description = "Availability zones for subnets"
   type        = list(string)
-  default     = ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
+  default     = ["ap-southeast-2a", "ap-southeast-2b"]
 }
 
 variable "existing_key_pair_name" {
   description = "The name of the existing key pair to attach to the VM"
   default     = "my-existing-keypair"
 }
+
+variable "s3_bucket" {
+  description = "S3 bucket for Terraform state"
+  default     = "my-terraform-state-bucket-pip"
+}
+
+variable "dynamodb_table" {
+  description = "DynamoDB table for Terraform state locking"
+  default     = "terraform-lock-table"
+}
+
+variable "state_key" {
+  description = "The key/path inside the S3 bucket for storing the Terraform state"
+  default     = "terraform.tfstate"
+}
+
