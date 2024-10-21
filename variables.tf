@@ -1,6 +1,6 @@
 variable "aws_region" {
   description = "AWS region to deploy resources"
-  default     = "us-east-1"
+  default     = "ap-southeast-2"
 }
 
 variable "vpc1_cidr" {
@@ -41,7 +41,7 @@ variable "ami_id" {
 variable "availability_zones" {
   description = "Availability zones for subnets"
   type        = list(string)
-  default     = ["us-east-1a", "us-east-1b"]
+  default     = ["ap-southeast-2a", "ap-southeast-2b", "ap-southeast-2c"]
 }
 
 variable "existing_key_pair_name" {
