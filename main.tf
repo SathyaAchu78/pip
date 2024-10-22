@@ -41,7 +41,7 @@ resource "aws_vpc_peering_connection" "vpc_peering" {
   peer_vpc_id = module.vpc2.vpc_id
 }
 
-# the Autoscaling group behind a classic Load Balancer
+#  the Autoscaling group behind a classic Load Balancer
 module "autoscaling" {
   source             = "./modules/autoscaling"
   ami_id             = var.ami_id
@@ -51,13 +51,13 @@ module "autoscaling" {
   availability_zones = var.availability_zones
 }
 
-terraform {
-  backend "s3" {
-    bucket         = var.s3_bucket
-    key            = var.state_key
-    region         = var.aws_region
-    dynamodb_table = var.dynamodb_table
-    encrypt        = true
-  }
-}
+# terraform {
+#   backend "s3" {
+#     bucket         = var.s3_bucket
+#     key            = var.state_key
+#     region         = var.aws_region
+#     dynamodb_table = var.dynamodb_table
+#     encrypt        = true
+#   }
+# }
 
