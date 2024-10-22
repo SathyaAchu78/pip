@@ -18,7 +18,7 @@ resource "aws_autoscaling_group" "web_asg" {
   max_size             = 6
   desired_capacity     = 3
   vpc_zone_identifier  = [var.public_subnet_id]
-  availability_zones   = var.availability_zones
+  # availability_zones   = var.availability_zones
 
   tag {
     key                 = "Name"
