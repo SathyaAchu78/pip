@@ -44,6 +44,7 @@ resource "aws_vpc_peering_connection" "vpc_peering" {
 #  the Autoscaling group behind a classic Load Balancer
 module "autoscaling" {
   source             = "./modules/autoscaling"
+  key_name           = "sathya--pip-ssh.pem"
   ami_id             = var.ami_id
   instance_type      = var.instance_type
   public_subnet_id   = module.subnet1.public_subnet_id
