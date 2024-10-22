@@ -25,5 +25,5 @@ resource "aws_network_interface" "vnet0" {
 
 resource "aws_eip" "eip" {
   network_interface = aws_network_interface.vnet0.id
-  vpc               = true
+  domain               = "vpc"
 }
