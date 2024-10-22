@@ -48,5 +48,5 @@ resource "aws_elb" "web_elb" {
     unhealthy_threshold = 2
   }
 
-  instances = aws_autoscaling_group.web_asg.instances
+  # instances = aws_autoscaling_group.web_asg.instances
 }
